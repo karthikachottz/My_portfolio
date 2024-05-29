@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- --------- FAVICON ---------- -->
-    <link rel="shortcut icon" href="C:\Users\karth\portfolio\portfolio website HTML, CSS & JS_1 Starting Point\assets\images\J (2).png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets\images\J (2).png" type="image/x-icon">
     <title>Portfolio</title>
 </head>
 <body>
@@ -67,8 +67,9 @@
             </div>
 
                     <div class="featured-text-btn">
-                        <a href="C:\Users\karth\portfolio\portfolio website HTML, CSS & JS_1 Starting Point\assets\KARTHIKA%20JAYAKUMAR%20resume.pdf" download="KARTHIKA_JAYAKUMAR_Resume.pdf" class="btn blue-btn">
-                            Download CV <i class="uil uil-file-alt"></i>
+                        <a href="assets/KARTHIKA JAYAKUMAR resume.pdf" target="_blank">
+
+                            Resume <i class="uil uil-file-alt"></i>
                         </a>
                     </div>
                 
@@ -96,10 +97,7 @@
             <div class="col">
                 <div class="about-info">
                     <h3>My introduction</h3>
-                    <p>I am well-versed in HTML, CSS and JavaScript , and other cutting edge
-                       frameworks and libraries,which allows me to implement interactive features.
-                       Additionally, I have experirence working with content management systems (CMS) like
-                       WordPress.
+                    <p>I am well-versed in HTML, CSS, JavaScript, and various modern frameworks and libraries, enabling me to implement interactive and dynamic features. Additionally, I excel in UI/UX design, creating intuitive and user-friendly interfaces. 
                     </p>
                     
                 </div>
@@ -112,7 +110,7 @@
                     <div class="skills-list">
                         <span>HTML</span>
                         <span>CSS</span>
-                        <span>Bootstrap</span>
+                        
                         <span>JavaScript</span>
                         
                     </div>
@@ -246,10 +244,11 @@
   const projectBoxes = document.querySelectorAll('.project-box');
 
   projectBoxes.forEach(box => {
-    box.addEventListener('click', function() {
-      window.location.href = "C://Users//karth//portfolio//portfolio website HTML, CSS & JS_1 Starting Point//findurfavr//index.html";
-    });
+  box.addEventListener('click', function() {
+    window.location.href = "findurfavr/index.html";
   });
+});
+
 </script>
 <script>
     document.getElementById('project2').addEventListener('click', function() {
