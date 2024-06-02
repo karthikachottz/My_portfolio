@@ -4,19 +4,20 @@
 /* ----- VARIABLES ----- */
 /* ----- VARIABLES ----- */
 :root {
-    --body-color: #C5ADC5; /* Pastel purple */
-    --color-white: #FFFFFF;
+    --body-color: #001034; /* Darker purple */
+    --color-white: #fff;
 
-    --text-color-second: #000000; /* Light steel blue */
-    --text-color-third: #800080; /* Darker purple */
+    --text-color-second:  #00adb5; /* Dark grey */
+    --text-color-third: #ffffff; /* Teal */
 
-    --first-color: #d67fd6; /* Darker purple */
-    --first-color-hover: #b2b5e0; /* Darker violet for hover */
+    --first-color: #00ffb9; /* Dark grey */
+    --first-color-hover: #00adb5; /* Teal for hover */
 
-    --second-color: #6ec2e9; /* Steel blue */
-    --third-color: #C0A631; /* Gold */
-    --first-shadow-color: rgba(75, 0, 130, 0.1); /* Violet shade with reduced opacity */
+    --second-color: #001034; /* Darker purple */
+    --third-color:  #00adb5;; /* Teal */
+    --first-shadow-color: rgba(0, 17, 52, 0); /* Dark purple shade with reduced opacity */
 }
+
 
 /* ... (rest of your CSS remains unchanged) ... */
 
@@ -37,20 +38,26 @@ html{
 }
 
 /* ----- CHANGE THE SCROLL BAR DESIGN ----- */
-::-webkit-scrollbar{
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
     width: 10px;
     border-radius: 25px;
 }
-::-webkit-scrollbar-track{
-    background: #f1f1f1;
+
+::-webkit-scrollbar-track {
+    background: var(--body-color); /* Use the root body color */
 }
-::-webkit-scrollbar-thumb{
-    background: #ccc;
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-color-second); /* Use the root text color (second) */
     border-radius: 30px;
 }
-::-webkit-scrollbar-thumb:hover{
-    background: #bbb;
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color-third); /* Use the root text color (third) */
 }
+
 
 
 /* ---##-- REUSABLE CSS --##--- */
@@ -77,7 +84,7 @@ html{
 /* Updated styling for Send button and Download CV button */
 .form-button>.btn:hover,
 .featured-text-btn>.blue-btn:hover {
-    background: #B2B5E0; /* Change to the desired hovering color */
+    background: #00ffb9; /* Change to the desired hovering color */
     color: var(--color-white);
 }
 
@@ -93,13 +100,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: rgb(22, 22, 189); /* Pastel purple to light steel blue gradient */
+    background: #ffffff; /* Pastel purple to light steel blue gradient */
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    background: #9c9090; /* White background for container */
+    background: var(--body-color); /* White background for container */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
     padding: 20px; /* Optional: Add padding inside container */
@@ -110,11 +117,11 @@ body {
 /* ----- NAVIGATION BAR ----- */
 /* ----- NAVIGATION BAR ----- */
 nav {
-    position: fixed;
+    position: relative;
     display: flex;
     justify-content: center; /* Center-align the navigation items */
     align-items: center;
-    width: 100%;
+    width: 1000px;
     height: 90px;
     line-height: 90px;
     background: transparent; /* Change background to transparent */
@@ -162,9 +169,7 @@ nav {
     padding-inline: 15px;
     margin-inline: 10px;
 }
-nav.shadow {
-    box-shadow: 0 4px 2px -2px gray;
-  }
+
   
   .active-link {
     color: red; /* Example active link style */
@@ -234,7 +239,7 @@ nav.shadow {
 .featured-name{
     font-size: 50px;
     font-weight: 600;
-    color: var(--text-color-second);
+    color:  #00ffb9;
     margin-block: 20px;
 }
 .typedText{
@@ -244,12 +249,21 @@ nav.shadow {
 .featured-text-info{
     font-size: 15px;
     margin-bottom: 30px;
-    color: var(--text-color-second);
+    color: white;
 }
 .featured-text-btn{
     display: flex;
     gap: 20px;
 }
+.featured-text-btn a {
+    color: #00adb5;
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.featured-text-btn a:hover {
+    color: #00ffb9; /* Optional: Change color on hover */
+}
+
 .featured-text-btn>.blue-btn{
     background: var(--first-color);
     color: var(--color-white);
@@ -346,16 +360,16 @@ nav.shadow {
 }
 .top-header h1{
     font-weight: 600;
-    color: var(--text-color-second);
+    color:white;
     margin-bottom: 10px;
 }
 .top-header span{
-    color: #999;
+    color: #ffffff;
 }
 h3{
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color-second);
+    color: white;
     margin-bottom: 15px;
 }
 
@@ -368,14 +382,15 @@ h3{
     padding-block: 30px 70px;
     padding-inline: 20px;
     width: 100%;
-    background: var(--color-white);
+    background: #00adb5;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     border-radius: 20px;
+    border: 3px solid #00adb5;
 }
 .about-info p{
     text-align: center;
     font-size: 15px;
-    color: #777;
+    color: black;
 }
 .about-btn button{
     position: absolute;
@@ -384,6 +399,7 @@ h3{
     background: var(--first-color);
     color: var(--color-white);
     border-radius: 30px;
+    
 }
 .about-btn button:hover{
     background: var(--first-color-hover);
@@ -395,18 +411,20 @@ h3{
 }
 .skills-header{
     margin-bottom: 30px;
+    color: #00adb5;
 }
 .skills-list{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
-.skills-list span{
+.skills-list span {
     font-size: 14px;
-    background: var(--first-color);
-    color: var(--color-white);
+    background: #ffffff; /* White background */
+    color: #000000; /* Black text */
     padding: 2px 10px;
-    border-radius: 5px;
+    border: 3px solid #00adb5; /* Border color */
+    border-radius: 10px;
 }
 
 /* ----- PROJECTS BOX ----- */
@@ -425,27 +443,29 @@ h3{
     flex-direction: column;
     width: 30%;
     height: 250px;
-    background: var(--color-white);
+    background:  #00adb5;
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
     transition: background-color 0.3s; /* Added transition for smoother color change */
 }
-.project-box>i {
+.project-box > i {
     font-size: 50px;
-    color: #B2B5E0;
+    color: #000000; /* Dark grey */
     margin-bottom: 25px;
 }
-.project-box label {
+
+.project-box > label {
     font-size: 15px;
-    color: #777;
+    color: #000000; /* Gray */
 }
+
 .project-box::after,
 .contact-info::after {
     content: "";
     position: absolute;
     bottom: -100%;
-    background: #B2B5E0; /* Change to the desired color */
+    background: #00ffb9; /* Dark grey */
     width: 100%;
     height: 100%;
     transition: .4s;
@@ -456,15 +476,18 @@ h3{
 .contact-info:hover.contact-info::after {
     bottom: 0;
 }
+
 .project-box:hover {
-    background-color: #B2B5E0; /* Change the background color on hover */
+    background-color: #737389; /* Dark grey */
 }
+
 .project-box:hover.project-box i,
-.project-box:hover.project-box>h3,
-.project-box:hover.project-box>label {
-    color: var(--color-white);
+.project-box:hover.project-box > h3,
+.project-box:hover.project-box > label {
+    color: black; /* White */
     z-index: 2;
 }
+
 
 
 /* ----- CONTACT BOX ----- */
@@ -477,7 +500,7 @@ h3{
     padding: 20px 30px;
     width: 100%;
     height: 315px;
-    background: var(--first-color); /* Change to violet color */
+    background: #00adb5; /* Change to violet color */
     border-radius: 10px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
@@ -540,12 +563,12 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--first-color); /* Change to violet color */
+    background: var(--text-color-second); /* Change to violet color */
     color: var(--color-white);
 }
 
 .form-button>.btn:hover {
-    background: var(--first-color-hover);
+    background: var(--third-color);
 }
 .form-button i{
     font-size: 18px;
@@ -553,13 +576,18 @@ textarea{
 }
 
 /* ----- FOOTER BOX ----- */
+.footer-link { /* Note the dot at the beginning */
+    text-decoration: none;
+    color: white!important;
+}
+
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #F8F8F8;
+    background: var(--body-color);
     padding-block: 40px 60px;
 }
 .top-footer p{
@@ -574,7 +602,7 @@ footer{
 }
 .footer_menu_list a{
     text-decoration: none;
-    color: var(--text-color-second);
+    color: white;
     font-weight: 500;
     margin-inline: 20px;
 }
@@ -614,7 +642,7 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(20px);
         width: 100%;
         min-height: 450px;
